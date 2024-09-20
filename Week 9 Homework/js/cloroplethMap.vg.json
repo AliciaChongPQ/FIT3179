@@ -1,37 +1,36 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "COVID-19 Active Cases (10 Oct 2020)",
+    "title": "Incidence Rate For Cholera By State",
     "width": 800,
     "height": 400,
     "projection": {"type": "equalEarth"},
     "data": {
-      "url": "./ne_110m.json",
-      "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+      "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179/refs/heads/main/Week%209%20Homework/js/ne_110m.json",
+      "format": {"type": "topojson", "feature": "ne_110m"}
     },
     "transform": [
       {
-        "lookup": "properties.NAME",
+        "lookup": "properties.featurecla",
         "from": {
           "data": {
-            "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/data/covid_10_10_2020.csv"
+            "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179/refs/heads/main/Week%209%20Homework/data/m-20210322103537_202306270945130_2000-2021-incidence-rate-for-cholera-by-state-malaysia.csv"
           },
-          "key": "Country",
-          "fields": ["Active"]
+          "key": "State",
+          "fields": ["Incidence Rate Per 100 000 Population"]
         }
-      },
-      {"calculate": "datum.Active + 0.1", "as": "Active Cases"}
+      }
     ],
     
     "mark": {"type": "geoshape"},
     "encoding": {
       "color": {
-        "field": "Active Cases",
+        "field": "Incidence Rate Per 100 000 Population",
         "type": "quantitative",
-        "scale": { "type": "threshold", "domain": [10000, 100000, 500000], "range": ["#fdbe85", "#fd8d3c", "#e6550d", "#a63603"] }
+        "scale": { "type": "threshold", "domain": [0.1,1,2], "range": ["#fdbe85", "#fd8d3c", "#e6550d", "#a63603"] }
       },
       "tooltip": [
-        {"field": "properties.NAME", "type": "nominal", "title": "Country"},
-        {"field": "Active", "type": "quantitative"}
+        {"field": "properties.featurecla", "type": "nominal", "title": "State"},
+        {"field": "Incidence Rate Per 100 000 Population", "type": "quantitative"}
       ]
     }
   }
