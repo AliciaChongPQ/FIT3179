@@ -1,0 +1,19 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 600,
+    "data": {
+      "url": "my.json",  // Your GeoJSON file
+      "format": {
+        "type": "json",
+        "property": "features"  // This assumes the GeoJSON has a "features" array
+      }
+    },
+    "mark": "geoshape",
+    "encoding": {
+      "color": {
+        "field": "properties.some_field",  // Replace with your field in the GeoJSON
+        "type": "quantitative"  // Adjust based on your data (could be ordinal, nominal, etc.)
+      }
+    }
+  }

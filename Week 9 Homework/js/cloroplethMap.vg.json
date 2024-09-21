@@ -5,32 +5,50 @@
     "height": 400,
     "projection": {"type": "equalEarth"},
     "data": {
-      "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179/refs/heads/main/Week%209%20Homework/js/ne_110m.json",
-      "format": {"type": "topojson", "feature": "ne_110m"}
+      "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179/refs/heads/main/Week%209%20Homework/js/my.json",
+      "format": {"type": "geojson"}
     },
-    "transform": [
-      {
-        "lookup": "properties.featurecla",
-        "from": {
-          "data": {
-            "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179/refs/heads/main/Week%209%20Homework/data/m-20210322103537_202306270945130_2000-2021-incidence-rate-for-cholera-by-state-malaysia.csv"
+    "layer": [{
+        "data": {
+          "url": "my.json",
+          "format": {
+            "type": "json",
+            "property": "features"
+          }
+        },
+        "mark": {
+          "type": "geoshape",
+          "stroke": "#d3d9e1",  
+          "strokeWidth": 0.3   
+  
+        },
+        "encoding": {
+            "color": {
+      "field": "expenditure-to-income ratio",
+      "type": "quantitative",
+      "scale": {
+            "domain": [0.2, 1.1], 
+            "range": ["#fee0d2", "#de2d26"] 
           },
-          "key": "State",
-          "fields": ["Incidence Rate Per 100 000 Population"]
+      "title": "Expenditure-To-Income Ratio"
+    } ,
+          "tooltip": [
+            {"field": "properties.name", "type": "nominal", "title": "State"},
+            {"field": "expenditure-to-income ratio", "type": "quantitative", "format": ".4f", "title": "Expenditure-to-Income Ratio"}
+            
+          ]
+        },
+        "transform": [
+        {
+          "lookup": "properties.feature",  
+          "from": {
+            "data": {
+              "url": "cholera_by_state.csv"  
+            },
+            "key": "state",  
+            "fields": ["expenditure-to-income ratio"]
+          }
         }
-      }
-    ],
-    
-    "mark": {"type": "geoshape"},
-    "encoding": {
-      "color": {
-        "field": "Incidence Rate Per 100 000 Population",
-        "type": "quantitative",
-        "scale": { "type": "threshold", "domain": [0.1,1,2], "range": ["#fdbe85", "#fd8d3c", "#e6550d", "#a63603"] }
-      },
-      "tooltip": [
-        {"field": "properties.featurecla", "type": "nominal", "title": "State"},
-        {"field": "Incidence Rate Per 100 000 Population", "type": "quantitative"}
       ]
-    }
+      }]
   }
