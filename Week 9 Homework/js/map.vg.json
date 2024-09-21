@@ -3,17 +3,17 @@
     "width": 800,
     "height": 600,
     "data": {
-      "url": "my.json",  // Your GeoJSON file
+      "url": "my.json", 
       "format": {
         "type": "json",
-        "property": "features"  // This assumes the GeoJSON has a "features" array
+        "property": "features" 
       }
     },
     "mark": "geoshape",
     "encoding": {
       "color": {
-        "field": "properties.some_field",  // Replace with your field in the GeoJSON
-        "type": "quantitative"  // Adjust based on your data (could be ordinal, nominal, etc.)
+        "field": "properties.features", 
+        "type": "quantitative" 
       }
     }
   }
