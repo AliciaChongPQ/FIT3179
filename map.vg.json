@@ -11,7 +11,7 @@
                     "center": [104.3, 3],
                     "translate": [275, 350]},
     "data": {
-      "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179/refs/heads/main/Week%209%20Homework/js/ne_1.topojson",
+      "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179/refs/heads/main/ne_1.topojson",
       "format": {"type": "topojson", "feature": "ne_10m_admin_1_states_provinces"}
     },
     "layer": [
@@ -22,7 +22,7 @@
         "lookup": "properties.name",
         "from": {
           "data": {
-            "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179/refs/heads/main/Week%209%20Homework/data/cholera_by_state.csv"
+            "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179/refs/heads/main/cholera_by_state.csv"
           },
           "key": "State",
           "fields": ["Year","Incidence Rate Per 100 000 Population"]
@@ -101,7 +101,7 @@
 },
 {
   "data": {
-    "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179/refs/heads/main/Week%209%20Homework/js/ne_1.topojson",
+    "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179/refs/heads/main/ne_1.topojson",
     "format": {
       "type": "topojson",
       "feature": "ne_10m_admin_1_states_provinces"
@@ -126,7 +126,7 @@
     "lookup": "properties.name",  
     "from": {
       "data": {
-        "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179/refs/heads/main/Week%209%20Homework/data/cholera_by_state.csv"  
+        "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179/refs/heads/main/cholera_by_state.csv"  
       },
       "key": "State",  
       "fields": ["Incidence Rate Per 100 000 Population"]
