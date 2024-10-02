@@ -21,7 +21,6 @@
           "hepatitis A normalized",
           "cholera normalized"
         ],
-        "labels": ["Typhoid", "Hepatitis A", "Cholera"],
         "name": "Select Disease: "
       }
     }
@@ -43,6 +42,10 @@
           "key": "State",
           "fields": ["typhoid normalized","hepatitis A normalized","cholera normalized"]
         }
+      },
+      {
+        "calculate": "datum[disease]",
+        "as":"selected_disease"
       }
     ],
     "mark": {"type": "geoshape",
@@ -50,7 +53,7 @@
           "strokeWidth": 1.5},
     "encoding": {
       "color": {      
-        "field": {"expr": "disease"},      
+        "field": "selected_disease",      
         "type": "quantitative",      
         "scale": {
           "type": "threshold",
@@ -61,7 +64,7 @@
       },
       "tooltip": [
         {"field": "properties.name", "type": "nominal", "title": "State"},
-        {"field": {"expr": "disease"}, "type": "quantitative", "title":"Incidence Rate Per 100 000 Population"}
+        {"field": "selected_disease", "type": "quantitative", "title":"Incidence Rate Per 100 000 Population"}
       ]
     }
 },
@@ -133,21 +136,25 @@
   "encoding": {
     "tooltip": [
       {"field": "properties.name", "type": "nominal", "title": "State"},
-      {"field": "Incidence Rate Per 100 000 Population", "type": "quantitative",  "title": "Incidence Rate Per 100 000 Population"}
+      {"field": "selected_disease", "type": "quantitative",  "title": "Incidence Rate Per 100 000 Population"}
       
     ]
   },
   "transform": [
-  {
-    "lookup": "properties.name",  
-    "from": {
-      "data": {
-        "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179/refs/heads/main/cholera_by_state.csv"  
+      {
+        "lookup": "properties.name",
+        "from": {
+          "data": {
+            "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179/refs/heads/main/diseases_per_100000.csv"
+          },
+          "key": "State",
+          "fields": ["typhoid normalized","hepatitis A normalized","cholera normalized"]
+        }
       },
-      "key": "State",  
-      "fields": ["Incidence Rate Per 100 000 Population"]
-    }
-  }
-]
+      {
+        "calculate": "datum[disease]",
+        "as":"selected_disease"
+      }
+    ]
 }]
   }
