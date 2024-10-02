@@ -10,6 +10,22 @@
                     "scale": 3000,
                     "center": [104.3, 3],
                     "translate": [275, 350]},
+    "params" :[
+      {
+        "name" : "disease",
+        "value" : "cholera normalized",
+        "bind": {
+          "input": "select",
+          "options":[
+          "typhoid normalized",
+          "hepatitis A normalized",
+          "cholera normalized"
+        ],
+        "labels": ["Typhoid", "Hepatitis A", "Cholera"],
+        "name": "Select Disease: "
+      }
+    }
+    ],
     "data": {
       "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179/refs/heads/main/ne_1.topojson",
       "format": {"type": "topojson", "feature": "ne_10m_admin_1_states_provinces"}
@@ -22,10 +38,10 @@
         "lookup": "properties.name",
         "from": {
           "data": {
-            "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179/refs/heads/main/cholera_by_state.csv"
+            "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179/refs/heads/main/diseases_per_100000.csv"
           },
           "key": "State",
-          "fields": ["Year","Incidence Rate Per 100 000 Population"]
+          "fields": ["typhoid normalized","hepatitis A normalized","cholera normalized"]
         }
       }
     ],
@@ -34,7 +50,7 @@
           "strokeWidth": 1.5},
     "encoding": {
       "color": {      
-        "field": "Incidence Rate Per 100 000 Population",      
+        "field": {"expr": "disease"},      
         "type": "quantitative",      
         "scale": {
           "type": "threshold",
@@ -45,7 +61,7 @@
       },
       "tooltip": [
         {"field": "properties.name", "type": "nominal", "title": "State"},
-        {"field": "Incidence Rate Per 100 000 Population", "type": "quantitative", "title":"Incidence Rate Per 100 000 Population"}
+        {"field": {"expr": "disease"}, "type": "quantitative", "title":"Incidence Rate Per 100 000 Population"}
       ]
     }
 },
