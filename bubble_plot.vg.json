@@ -9,7 +9,7 @@
     "mark": "circle",
     "encoding": {
       "x": {
-        "field": "water_treatment_plants",
+        "field": "water_treatment_plant_per_kms",
         "type": "quantitative",
         "title":"water_treatment_plants"
       },
