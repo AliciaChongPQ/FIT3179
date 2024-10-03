@@ -17,7 +17,7 @@
         "field": "percentage_houses_without_clean_water",
         "type": "quantitative"
       },
-      "size": {"field": "total_disease_incidence", "type": "quantitative", "scale": {"range": [100, 2000] }},
+      "size": {"field": "total_disease_incidence", "type": "quantitative"},
       "color": {"field": "water_treatment_plants", "type": "quantitative"},
       "tooltip": [
         {"field": "State", "type": "nominal"},
