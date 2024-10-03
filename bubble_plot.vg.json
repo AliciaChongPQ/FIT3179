@@ -17,13 +17,13 @@
         "field": "percentage_houses_without_clean_water",
         "type": "quantitative"
       },
-      "size": {"field": "total_disease_incidence", "type": "quantitative"},
+      "size": {"field": "total_disease_incidence_rate", "type": "quantitative", "scale": {"range": [100, 2000]}},
       "color": {"field": "water_treatment_plants", "type": "quantitative"},
       "tooltip": [
         {"field": "State", "type": "nominal"},
         {"field": "water_treatment_plants", "type": "quantitative", "title": "Number of Water Treatment Plants"},
         {"field": "percentage_houses_without_clean_water", "type": "quantitative", "title": "Percentage of Houses without Clean Water"},
-        {"field": "total_disease_incidence", "type": "quantitative", "title": "Total Incidence of Typhoid, Malaria and Hepatitis A"},
+        {"field": "total_disease_incidence_rate", "type": "quantitative", "title": "Total Incidence of Typhoid, Malaria and Hepatitis A"},
         {"field": "water_treatment_plants", "type": "quantitative", "format": ","}
       ]
   }
