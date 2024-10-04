@@ -1,11 +1,18 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+      "text":"TITLE",
+      "fontSize": 18,
+      "anchor": "middle",  
+       "align": "center",
+       "orient": "top"  
+  },
     "height": 400,
     "width": 500,
-    "title": "COVID-19 Cases per Country (13 Oct 2020)",
     "data": {
       "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179/refs/heads/main/diseases_per_100000.csv"
     },
+    
     "mark": "circle",
     "encoding": {
       "x": {
