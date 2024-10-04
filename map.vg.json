@@ -4,10 +4,10 @@
       "text":"Incidence Rate of water-borne diseases By State in Malaysia per 1M population",
       "fontSize": 18
   },
-    "width": 500,
-    "height": 400,
+    "width": 600,
+    "height": 350,
     "projection": {"type": "equalEarth",
-                    "scale": 1600,
+                    "scale": 1680,
                     "center": [110.3, -1],
                     "translate": [275, 350]},
     "params" :[
