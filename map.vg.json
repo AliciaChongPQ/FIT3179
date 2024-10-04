@@ -115,7 +115,6 @@
     "type": "geoshape",
     "stroke": "grey",
     "strokeWidth": 0.5,
-    "interactive": false,
     "fillOpacity": 0
   }
 },
