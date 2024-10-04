@@ -10,9 +10,9 @@
     "width": 600,
     "height": 350,
     "projection": {"type": "equalEarth",
-                    "scale": 1680,
+                    "scale": 1700,
                     "center": [110.3, -1],
-                    "translate": [290, 350]},
+                    "translate": [320, 350]},
     "params" :[
       {
         "name" : "disease",
