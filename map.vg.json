@@ -63,9 +63,9 @@
         "field": "selected_disease",      
         "type": "quantitative",      
         "scale": {
-          "type": "threshold",
-          "domain": [5, 50, 250, 1000], 
-          "range": ["#f7e0df","#c74940", "#992820", "#570c07", "#2b0503"] 
+          "type": "linear",
+          "domain": [5, 50, 500, 5000], 
+          "range": ["#f7e0df","#c74940", "#992820", "#570c07"] 
         },
         "title": "Incidence Rate Per 1M Population"    
       }
