@@ -12,7 +12,7 @@
     "projection": {"type": "equalEarth",
                     "scale": 1680,
                     "center": [110.3, -1],
-                    "translate": [275, 350]},
+                    "translate": [290, 350]},
     "params" :[
       {
         "name" : "disease",
