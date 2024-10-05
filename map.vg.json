@@ -70,9 +70,9 @@
           "domain": [5, 50, 500, 5000], 
           "range": ["#f7e0df","#c74940", "#992820", "#570c07"] 
         },
-        "title": "Incidence Rate Per 1M Population",
+        "title": "Incidence Per 1M Population",
         "legend": {
-          "orient": "bottom-right" 
+          "orient": "bottom-left" 
         } 
       }
     }
